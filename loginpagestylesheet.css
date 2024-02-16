@@ -1,0 +1,141 @@
+#body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px 0px 0px 0px ;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/hand-giving-bowl-food-needy-person.jpg);
+    background-size: cover;
+}
+#navigationBar{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #001d3d;
+}
+#siteName{
+    padding-left: 50px;
+    padding-top: 10px;
+    height: 40px;
+    width: auto;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+#navigationBarSecond{
+    padding-top: 10px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navigationBarSecond{
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-left: 20px;
+}
+#logoSizing{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loginBox{
+    height: 600px;
+    width: 600px;
+    border: 5px solid #8ac926;
+    box-shadow: -10px 10px 20px 10px rgba(0,0,0,0.9);;
+    padding: 10px 25px 35ox 35px;
+    margin-left: 0px;
+    margin-top: -50px;
+    border-radius:20px ;
+    background-color: rgba(0,0,0,0.59);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#title{
+    color: #8ac926;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 800;
+}
+#loginForm{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+}
+#loginCredentials{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    outline: none;
+    color: #fbc4ab;
+}
+.inputLoginCredentials{
+    margin-bottom: 30px;
+}
+.input{
+    height: 50px;
+    width: 300px;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    font-weight: 200;
+    border-bottom: 1px solid #8ac926;
+    color: #8ac926;
+    background-color: transparent;
+}
+.input::placeholder{
+    color: #8ac926;
+}
+.input:hover{
+    border-bottom:3px solid #8ac926 ;
+}
+#submitButton{
+    width: 250px;
+    color: #8ac926;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: transparent;
+    border-color: #8ac926;
+}
+#signUpButton{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    height: 50px;
+    padding: bottom 20px; ;
+}
+#signUpButton a{
+    margin-bottom: 10px;
+    color: #8ac926;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+#forgotPassword{
+    margin-bottom: 10px;
+}
+#signUp{
+    margin-bottom: 10px;
+}
