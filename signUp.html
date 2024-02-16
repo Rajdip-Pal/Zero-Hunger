@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signuppagestylesheet.css">
+    <script>
+        function donarSelectOption(){
+            var typeofDonarValue = document.getElementById("typeOfDonarSelect").value
+            var additionalDiv = document.getElementById("onSelectRegularDonar")
+
+            if(typeofDonarValue === "1"){
+                additionalDiv.style.display = "flex"
+            }else{
+                additionalDiv.style.display = "none"
+            }
+        }
+
+        function frequencyOfDonation(){
+            var frequency = document.getElementById("howFrequentlyWantToDonate").value
+            var resultOfDays = document.getElementById("specificDays")
+            var resultOfDate = document.getElementById("specificDate")
+
+            if(frequency === "daily"){
+                resultOfDays.style.display = "none"
+                resultOfDate.style.display = "none"
+            }else if(frequency === "weekly"){
+                resultOfDays.style.display = "block"
+                resultOfDate.style.display = "none"
+            }else if(frequency === "monthly"){
+                resultOfDays.style.display = "none"
+                resultOfDate.style.display = "block"
+            }
+        }
+
+        function buttonColourChange(){
+            var id =document.getElementById("saveAndProceedButton")
+            id.style.border.width = "3px"
+            id.style.border.borderStyle = "solid"
+            id.style.border.color = "#8ac926"
+            id.style.color = "#8ac926"
+            id.style.backgroundColor = "#001d3d"
+        }
+    </script>
+</head>
+<body id="body">
+    <navbar id="navigationBar" class="body">
+        <div id="navigationBarFirst" >
+            <div id="siteName" class="navigationBarFirst"> zerohunger.com </div>
+        </div>
+        <div id="navigationBarSecond">    
+            <button id="logInButton" class="navigationBarSecond">
+                <a href="index.html">Log In</a>
+            </button>
+        </div> 
+    </navbar>
+
+    <div id="createAccountDialougeBox">
+        <div class="createAccountDialougeBox">
+            <div id="headline" class="createAccountDialougeBoxElement"> 
+                <span id="heading">Create New Account</span> 
+            </div>
+            <div id="userData">
+                <div id="contactData">
+                    <div id="usersname" class="userContactData"><input type="text" placeholder="Name" autocomplete="off"></div>
+                    <div id="email" class="userContactData"><input type="email" placeholder="E-mail Address" autocomplete="off"></div>
+                    <div id="setusername" class="userContactData"><input type="text" placeholder="Enter a Username" autocomplete="off"></div>
+                    <div id="phoneNumber" class="userContactData"><input type="text" placeholder="Phone Number" autocomplete="off"></div>
+                </div>
+                <br>
+                <div id="addressData">
+                    <div id="addressDataOne" class="addressData">
+                        <div id="inputAddress" ><input type="text" placeholder="Address" autocomplete="off"></div>
+                        <div id="city"><input type="text" placeholder="City" id="inputCity" autocomplete="off"></div>
+                        <div id="district"><input type="text" placeholder="District" id="inputDistrict" autocomplete="off"></div>
+                    </div>
+                    <div id="addressDataTwo" class="addressData">
+                        <div id="pinCode"><input type="text" placeholder="Pincode" id="inputPinCode" autocomplete="off"></input></div>
+                        <div id="state"><input type="text" placeholder="State" id="inputState" autocomplete="off"></div>
+                        <div id="country"><input type="text" placeholder="Country" id="inputcountry" autocomplete="off"></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="typeOfDonar">
+                <select id="typeOfDonarSelect" onchange="donarSelectOption()">
+                    <option disabled selected hidden>What Kind of Donar You are?</option>
+                    <option value="1">Regular</option>
+                    <option value="2">Occasional</option>
+                </select>
+            </div>
+            <br>
+            <div id="onSelectRegularDonar" style="display: none;">
+                <select id="howFrequentlyWantToDonate" onchange="frequencyOfDonation()">
+                    <option disabled selected hidden>How Often Do You Want To Donate?</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                <div id="specificDays" style="display: none;">
+                    <input id="sunday" type="checkbox">
+                    <label  for="sunday"> Sunday</label>
+                
+                    <input id="monday" type="checkbox">
+                    <label for="monday"> Monday</label>
+
+                    <input id="tuesday" type="checkbox">
+                    <label for="tuesday"> Tuesday</label>
+                
+                    <input id="wednesday" type="checkbox">
+                    <label for="wednesday"> Wednesday </label>
+            
+                    <input id="thursday" type="checkbox">
+                    <label for="thursday"> Thursday</label>
+                
+                    <input type="checkbox" id="friday">
+                    <label for="friday"> Friday</label>
+            
+                    <input type="checkbox" id="saturday">
+                    <label for="saturday"> Saturday </label>
+                </div>
+                <div id="specificDate" style="display: none;">
+                    <input type="date" placeholder="Select Date">
+                </div>
+            </div>
+            
+            <div class="time">
+                <select id="time">
+                    <option disabled hidden selected>When You want to Donate?</option>
+                    <option value="morning">Morning (10 am)</option>
+                    <option value="afternoon">Afternoon (12 pm)</option>
+                    <option value="night">Night (8 pm)</option>
+                </select>
+            </div>
+            <div id="saveAndProceed">
+            <button id="saveAndProceedButton" onclick="buttonColourChange()">
+                Save and Proceed
+            </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
