@@ -11,16 +11,16 @@
     background-size: cover;
 }
 #navigationBar{
-    height: 60px;
-    width: 100%;
+    height: 8%;
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     background-color: #001d3d;
 }
 #siteName{
+    padding: 5px;
     padding-left: 50px;
-    padding-top: 10px;
     height: 40px;
     width: auto;
     color: white;
@@ -28,7 +28,7 @@
     font-size: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: left;
 }
 #navigationBarSecond{
     padding-top: 10px;
@@ -47,13 +47,14 @@
 }
 #logoSizing{
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #loginBox{
-    height: 600px;
-    width: 600px;
+    height: 80%;
+    width: 50%;
     border: 5px solid #8ac926;
     box-shadow: -10px 10px 20px 10px rgba(0,0,0,0.9);;
     padding: 10px 25px 35ox 35px;
@@ -68,36 +69,37 @@
 #title{
     color: #8ac926;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 8%;
     font-size: 40px;
     font-weight: 800;
 }
+
 #loginForm{
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -100px;
 }
 #loginCredentials{
-    height: 100%;
+    height: 80%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 200px;
     outline: none;
-    color: #fbc4ab;
 }
 .inputLoginCredentials{
-    margin-bottom: 30px;
+    margin-bottom: 5%;
 }
 .input{
     height: 50px;
     width: 300px;
     outline: none;
     border: none;
-    font-size: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
     font-weight: 200;
     border-bottom: 1px solid #8ac926;
     color: #8ac926;
@@ -124,7 +126,10 @@
     margin-bottom: 20px;
     font-size: 15px;
     height: 50px;
-    padding: bottom 20px; ;
+    padding: bottom 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #signUpButton a{
     margin-bottom: 10px;
@@ -157,4 +162,104 @@
 }
 .footerData a:hover{
     border-bottom: 1px solid #8ac926;
+}
+@media (min-width:1441px) {
+    #title{
+        font-size: 60px;
+    }
+    .input{
+        font-size: 40px;
+        width: 500px;
+        text-align: center;
+        padding: 2px;
+    }
+    #submitButton{
+        font-size: 40px;
+        height: 150%;
+        width: 400px;
+        border-radius: 50px;
+    }
+    #signUpButton a{
+        font-weight: 500;
+        font-size: 30px;
+    }
+    .footerData a{
+        font-size: 25px;
+        font-weight: 600;
+    }
+}
+@media (min-width:1281px) and (max-width:1440px) {
+    #title{
+        font-size: 40px;
+    }
+    .input{
+        font-size: 20px;
+        width: 300px;
+        text-align: center;
+        padding: 2px;
+    }
+    #submitButton{
+        font-size: 20px;
+        height: 150%;
+        width: 200px;
+        border-radius: 20px;
+    }
+    #signUpButton a{
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .footerData a{
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+@media (min-width:769px) and (max-width:1280px) {
+    #title{
+        font-size: 30px;
+    }
+    .input{
+        font-size: 15px;
+        width: 250px;
+        text-align: center;
+        padding: 2px;
+    }
+    #submitButton{
+        font-size: 15px;
+        height: 150%;
+        width: 150px;
+        border-radius: 20px;
+    }
+    #signUpButton a{
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .footerData a{
+        font-size: 10px;
+        font-weight: 600;
+    }
+}
+@media (min-width:500px) and (max-width:768px) {
+    #title{
+        font-size: 30px;
+    }
+    .input{
+        font-size: 15px;
+        width: 200px;
+        text-align: center;
+        padding: 2px;
+    }
+    #submitButton{
+        font-size: 15px;
+        height: 150%;
+        width: 100px;
+        border-radius: 20px;
+    }
+    #signUpButton a{
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .footerData a{
+        font-size: 10px;
+        font-weight: 600;
+    }
 }
