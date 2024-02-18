@@ -23,6 +23,10 @@ app.get("/login", (req, res) => {
     res.render("login")
 });
 
+app.get("/forgotpassword", (req, res) => {
+    res.render("forgotpassword")
+});
+
 app.listen(port, () => {
     console.log(`server is running at ${port}`)
 });
