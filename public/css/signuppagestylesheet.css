@@ -1,97 +1,204 @@
-#body{
-    height: 100vh;
-    width: 100vw;
-    margin: 0px 0px 0px 0px ;
-    overflow: hidden;
-    background-image: url(../images/hand-giving-bowl-food-needy-person.jpg);
-    background-size: cover;
+* {
+    margin: 0px;
+    padding: 0px;
 }
+
+body {
+    background-color: rgba(139, 232, 240, 0.5);
+    z-index: -3;
+}
+
+/*----------------------------------------------------------------*/
+/* navigationbar */
 #navigationBar{
-    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navigationBar::before {
+    content: "";
+    background-color: #001d3d;
+    position: absolute;
+    height: 100%;
     width: 100%;
+    z-index: -1;
+}
+
+#navigationBarFirst {
+    padding: 25px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: #001d3d;
+    align-items: center;
+    font-size: 20px;
 }
+
+#navigationBarFirst a {
+    text-decoration: none;
+    padding: 0px 15px;
+}
+
+.navbarBtn {
+    text-decoration: none;
+    color: white;
+}
+
+.navbarBtn:hover {
+    background-color: aliceblue;
+    color: #001d3d;
+    border-radius: 15px;
+}
+
+
 #siteName{
-    padding-left: 50px;
-    padding-top: 10px;
     height: 40px;
-    width: auto;
     color: white;
     font-weight: bolder;
     font-size: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
 }
+
 #navigationBarSecond{
     padding-top: 10px;
     padding-right: 40px;
     padding-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.navigationBarSecond{
     font-size: 20px;
-    border: 4px double #8ac926;
-    border-radius: 10px;
-    background-color: #001d3d;
     margin-left: 20px;
 }
-#logInButton a{
-    color: #8ac926;
+
+#navigationBarSecond a {
     text-decoration: none;
-    font-weight: 800;
+    color: white;
+    font-weight: 400;
 }
-input::placeholder{
+
+#navigationBarSecond a:hover {
+    text-decoration: underline;
+}
+/* ---------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------- */
+/* home */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#createAccountDialougeBox {
     color: #8ac926;
+    box-sizing: border-box;
+    margin: 60px 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    border: 5px solid #8ac926;
+    border-radius: 40px;
+    box-shadow: -20px 20px 30px 20px rgba(0,0,0,0.9);
+    /* background-color: aliceblue; */
+    background-color: rgba(20,33,61,0.9);
 }
-input{
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #8ac926;
-    background-color: transparent;
-    padding: 5px;
-    color: #8ac926;
+
+#createAccountDialougeBox::before {
+    content: "";
+    position: absolute;
+    background: url('../images/hand-giving-bowl-food-needy-person.jpg') no-repeat center center/cover;
+    top: 0px;
+    left: 0px;
+    height: 430px;
+    width: 100%;
+    z-index: -2;
+    opacity: 0.9;
 }
-input :hover{
-    border-bottom: 3px solid #8ac926;
-}
-input:-webkit-autofill {
-    background-color: transparent;
-}
-input:-webkit-autofill:focus {
-    background-color:transparent;
-}
-#createAccountDialougeBox{
-    height: 90vh;
-    width: 100vw;
+
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.createAccountDialougeBox{
-    height: 90%;
-    width: 80%;
-    border: 5px solid #8ac926;
-    border-radius: 40px;
-    background-color: rgba(20,33,61,0.9);
-    box-shadow: -20px 20px 30px 20px rgba(0,0,0,0.9);
+
+.form label {
+    padding: 6px;
+    font-size: 1.1rem;
+    margin: 2px 25px;
 }
-#headline{
-    text-align: center;
-    font-size: 50px;
-    margin: 10px 30% 10px 30%;
-    padding: 10px 10px 10px 10px;
+
+.form input {
     color: #8ac926;
-    border: 3px double #8ac926;
-    border-radius: 20px;
+    padding: 5px;
+    font-size: 1.1rem;
+    margin: 2px 25px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: #8ac926 2px solid;
 }
-#contactData{
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#headline{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 3.2rem;
+    padding: 25px 0px;
+    color: #8ac926;
+}
+
+input::placeholder{
+    color: #8ac926;
+}
+
+#typeOfDonor {
+    padding: 20px;
+}
+
+.selectTag {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-top: 30px;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+#saveAndProceedButton {
+    border: 2px green solid;
+    background-color: white;
+    color: green;
+    margin: 20px;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 15px;
+}
+
+#saveAndProceedButton:hover {
+    color: white;
+    background-color: green;
+    border-color: green;
+    cursor: pointer;
+}
+
+#specificDays {
+    margin: 20px 10px;
+}
+/* #contactData{
     line-height: 100%;
     width: 100%;
     display: flex;
@@ -233,29 +340,4 @@ input:-webkit-autofill:focus {
     padding: 10px 10% 10px 10% ;
     background-color: #8ac926;
     color: #001d3d;
-}
-#footer{
-    position: fixed;
-   
-}
-#footerData{
-    margin-top: 0.3%;
-    margin-bottom: 0px;
-    height: 3vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    background-color: #001d3d;
-    align-items: center;
-}
-.footerData a{
-    margin-left: 10px ;
-    margin-right: 10px ;
-    color: #8ac926;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-}
-.footerData a:hover{
-    border-bottom: 1px solid #8ac926;
-}
+} */

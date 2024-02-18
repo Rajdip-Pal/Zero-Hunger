@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
     res.render("index")
 });
 
+app.get("/index", (req, res) => {
+    res.render("index")
+});
+
 app.get("/signup", (req, res) => {
     res.render("signup")
 });
@@ -25,6 +29,10 @@ app.get("/login", (req, res) => {
 
 app.get("/forgotpassword", (req, res) => {
     res.render("forgotpassword")
+});
+
+app.get("/resetpassword", (req, res) => {
+    res.render("resetpassword")
 });
 
 app.listen(port, () => {
