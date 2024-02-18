@@ -13,8 +13,9 @@ instead of <br>
 <h1>To run Live Server</h1>
 <p>
   <ol>
-    <li>Create a new codespace.</li>
-    <li>Open git bash terminal in the respective directory.</li>
+    <li>Create a new codespace. Wait for the codespace to be build properly.</li>
+    <li>Open git bash terminal.</li>
+    <li>Run "<b>npm i nodemon</b>" in the terminal. Wait for the download and installation.</li>
     <li>Type "<b>npm run dev</b>" in the terminal.</li>
     <li>Click on "<b>Port</b>" in the terminal options.</li>
     <li>Click on the "<b>Open in Browser</b>" to enjoy Live Server.</li>
