@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../signUpOtp/signUpOtpStylesheet.css">
+    <title>Sign Up</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var otpInputs = document.querySelectorAll('.inputOtpField');
+        otpInputs.forEach(function(input, index) {
+                input.addEventListener('input', function() {
+                if (this.value.length === 1) {
+                    if (index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                    }
+                }
+                });
+                input.addEventListener('keydown', function(event) {
+                if (event.key === 'Backspace' && index > 0 && this.value.length === 0) {
+                    otpInputs[index - 1].focus();
+                }
+                });
+            });
+        });
+
+        function buttonStyleChange(id){
+            var buttonId = document.getElementById(id);
+            buttonId.style.backgroundColor = "#001d3d"
+        }
+
+        function getOtp(){
+            var otpForm = document.getElementById('signUpOtpForm');
+            var otpInputs = document.querySelectorAll('.inputOtpField'); 
+            var otp = '';
+            otpInputs.forEach(function(input) {
+                otp += input.value;
+            });
+            if (otp.length === otpInputs.length) {
+                buttonStyleChange('otpVerification');
+                var inputs = document.querySelectorAll('.inputOtpField');
+                inputs.forEach(function(input) {
+                    input.disabled = true;
+                });
+            } else {
+                alert('Please enter the OTP correctly.');
+                otpForm.addEventListener('submit', function(event) {
+                    event.preventDefault(event);
+                })
+                document.getElementById("resetPasswordForward").href = "#"
+                return;
+            }
+        }
+
+        function checkPassword(){
+            var string01 = document.getElementById("inputnewPasswordString01")
+            var string02 = document.getElementById("inputnewPasswordString02")
+            if(string01.value === string02.value && string01.value != '' && string02.value != ''){
+                alert("You are going to forward to Log in Page.")
+                document.getElementById("forwardingToLoginPage").href = "../loginPage/index.html"
+            }else{
+                alert("Check Passwords")
+                let submitButton = document.getElementById("changePassword")
+                let form = document.getElementById("newPassword")
+                form.addEventListener("submit",function(event){
+                    event.preventDefault(event)
+                })
+                document.getElementById("forwardingToLoginPage").href = "#"
+                return;
+            }
+        }
+
+        function passwordMismatch(){
+            let newPassword = document.getElementById("inputnewPasswordString01").value;
+            let retype_newPassword = document.getElementById("inputnewPasswordString02").value;
+            document.getElementById("warningForMismatch").innerText = "Password doesn't matched. Recheck your Password."
+            if( newPassword === '' || retype_newPassword === ''){
+                document.getElementById("warningForMismatch").style.display = "block"; 
+                document.getElementById("warningForMismatch").innerText = "Enter Valid Password"
+                return;
+            }
+
+            if(newPassword === retype_newPassword){
+                document.getElementById("warningForMismatch").style.display = "none"; 
+            }else{
+                document.getElementById("warningForMismatch").style.display = "block"; 
+            }
+        }
+
+        function setPassword(){
+            document.getElementById("passwordSetUp").style.display = "block"
+            document.getElementById("signUpOtpForm").style.height = "75%"
+        }
+    </script>
+</head>
+<body>
+    <footer id="navigationBar" class="body">
+        <div id="navigationBarFirst" >
+            <div id="siteName" class="navigationBarFirst"> zerohunger.com </div>
+        </div>
+    </footer>
+    <div id="formSizing">
+        <form action="#" id="signUpOtpForm">
+            <div  id="showOtpField" >
+                <div id="otpSent">
+                    OTP is Sent to Your E-mail and Mobile Phone Number.
+                </div>
+                <div id="otpField">
+                    Enter Your OTP here
+                    <div id="otp">
+                        <input id="inputOtpField01" maxlength="1" class="inputOtpField" type="number" autocomplete="off">
+                        <input id="inputOtpField02" maxlength="1" class="inputOtpField" type="number" autocomplete="off">
+                        <input id="inputOtpField03" maxlength="1" class="inputOtpField" type="number" autocomplete="off">
+                        <input id="inputOtpField04" maxlength="1" class="inputOtpField" type="number" autocomplete="off">
+                        <input id="inputOtpField05" maxlength="1" class="inputOtpField" type="number" autocomplete="off">
+                    </div>
+                </div>
+                <button id="otpVerification" type="submit" onclick="getOtp(),setPassword()">
+                    Verify
+                </button>
+            </div>
+            <div id="passwordSetUp" style="display: none;">
+                <div id="newPasswordString01" class="passwordString">
+                    Type Password :
+                    <input type="password" id="inputnewPasswordString01" autocomplete="off">
+                </div>
+                <div id="newPasswordString02" class="passwordString">
+                    Re-type Password :
+                    <input type="text"id="inputnewPasswordString02" autocomplete="off" onchange="passwordMismatch()">
+                </div>
+                <div id="warningForMismatch" style="display: none;">
+                    Password doesn't matched. Recheck your Password.
+                </div>
+                <button id="changePassword" onclick="passwordMismatch(),checkPassword()">
+                    <a id="forwardingToHomePage" href="#">
+                        Change Password
+                    </a>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
