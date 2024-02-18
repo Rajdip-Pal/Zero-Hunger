@@ -224,6 +224,7 @@ input:-webkit-autofill:focus {
     justify-content: center;
 }
 #saveAndProceedButton{
+    cursor: pointer;
     margin:  2.5%;
     border: 3px solid transparent;
     border-radius: 20px;

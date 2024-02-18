@@ -12,7 +12,7 @@
             var additionalDiv = document.getElementById("onSelectRegularDonar")
             var frequencyOfDonor = document.getElementById("howFrequentlyWantToDonate")
 
-            if (typeofDonarValue === "1") {
+            if (typeofDonarValue === "regular") {
                 additionalDiv.style.display = "flex"
                 frequencyOfDonor.setAttribute('required', '')
             } else {
@@ -28,7 +28,7 @@
             var timing = document.getElementById("time")
 
             if (frequency === "daily") {
-                resultOfDays.style.display = "none"
+                resultOfDays.style.display = "block"
                 resultOfDate.style.display = "none"
                 time.style.display = "block"
             } else if (frequency === "weekly") {
@@ -76,67 +76,66 @@
                         <div id="usersname" class="userContactData"><input name="name" type="text" placeholder="Name"
                                 autocomplete="off" required></div>
                         <div id="email" class="userContactData"><input name="email" type="email"
-                                placeholder="E-mail Address" autocomplete="off"></div>
+                                placeholder="E-mail Address" autocomplete="off" required></div>
                         <div id="setusername" class="userContactData"><input name="username" type="text"
-                                placeholder="Enter a Username" autocomplete="off required"></div>
+                                placeholder="Enter a Username" autocomplete="off" required></div>
                         <div id="phoneNumber" class="userContactData"><input name="phone" type="tel" pattern="[0-9]{10}"
                                 placeholder="Mobile No. (without initials)" autocomplete="off" required></div>
                     </div>
                     <br>
                     <div id="addressData">
                         <div id="addressDataOne" class="addressData">
-                            <div id="inputAddress"><input type="text" placeholder="Address" autocomplete="off" required></div>
-                            <div id="city"><input type="text" placeholder="City" id="inputCity" autocomplete="off" required>
+                            <div id="inputAddress"><input name="address" type="text" placeholder="Address" autocomplete="off" required></div>
+                            <div id="city"><input name="city" type="text" placeholder="City" id="inputCity" autocomplete="off" required>
                             </div>
-                            <div id="district"><input type="text" placeholder="District" id="inputDistrict"
+                            <div id="district"><input name="district" type="text" placeholder="District" id="inputDistrict"
                                     autocomplete="off" required></div>
                         </div>
                         <div id="addressDataTwo" class="addressData">
-                            <div id="pinCode"><input type="text" placeholder="Pincode" id="inputPinCode"
+                            <div id="pinCode"><input name="pincode" type="text" placeholder="Pincode" id="inputPinCode"
                                     autocomplete="off" required></input></div>
-                            <div id="state"><input type="text" placeholder="State" id="inputState" autocomplete="off" required>
+                            <div id="state"><input name="state" type="text" placeholder="State" id="inputState" autocomplete="off" required>
                             </div>
-                            <div id="country"><input type="text" placeholder="Country" id="inputcountry"
+                            <div id="country"><input name="country" type="text" placeholder="Country" id="inputcountry"
                                     autocomplete="off" required></div>
                         </div>
                     </div>
                 </div>
                 <br>
                 <div id="typeOfDonar">
-                    <select id="typeOfDonarSelect" onchange="donarSelectOption()" required>
+                    <select name="typeOfDonar" id="typeOfDonarSelect" onchange="donarSelectOption()" required>
                         <option value="" disabled selected hidden>What Kind of Donar You are?</option>
-                        <option value="1">Regular</option>
-                        <option value="2">Occasional</option>
+                        <option value="regular">Regular</option>
+                        <option value="occasional">Occasional</option>
                     </select>
                 </div>
                 <br>
                 <div id="onSelectRegularDonar" style="display: none;">
-                    <select id="howFrequentlyWantToDonate" onchange="frequencyOfDonation()">
+                    <select name="frequencyOfDonation" id="howFrequentlyWantToDonate" onchange="frequencyOfDonation()">
                         <option value="" selected hidden>How Often Do You Want To Donate?</option>
                         <option value="daily">Daily</option>
                         <option value="weekly">Weekly</option>
-                        <option value="monthly">Monthly</option>
                     </select>
                     <div id="specificDays" style="display: none;">
-                        <input id="sunday" type="checkbox">
+                        <input name="noOfDays" id="sunday" class="specificDays" type="checkbox">
                         <label for="sunday"> Sunday</label>
 
-                        <input id="monday" type="checkbox">
+                        <input name="noOfDays" id="monday" class="specificDays" type="checkbox">
                         <label for="monday"> Monday</label>
 
-                        <input id="tuesday" type="checkbox">
+                        <input name="noOfDays" id="tuesday" class="specificDays" type="checkbox">
                         <label for="tuesday"> Tuesday</label>
 
-                        <input id="wednesday" type="checkbox">
+                        <input name="noOfDays" id="wednesday" class="specificDays" type="checkbox">
                         <label for="wednesday"> Wednesday </label>
 
-                        <input id="thursday" type="checkbox">
+                        <input name="noOfDays" id="thursday" class="specificDays" type="checkbox">
                         <label for="thursday"> Thursday</label>
 
-                        <input type="checkbox" id="friday">
+                        <input name="noOfDays" type="checkbox" class="specificDays" id="friday">
                         <label for="friday"> Friday</label>
 
-                        <input type="checkbox" id="saturday">
+                        <input name="noOfDays" type="checkbox" class="specificDays" id="saturday">
                         <label for="saturday"> Saturday </label>
                     </div>
                     <div id="specificDate" style="display: none;">
@@ -145,15 +144,15 @@
                 </div>
 
                 <div class="time">
-                    <select id="time" style="display: none;">
-                        <option disabled hidden selected>When You want to Donate?</option>
+                    <select name="time" id="time" style="display: none;">
+                        <option value="" disabled hidden selected>When You want to Donate?</option>
                         <option value="morning">Morning (10 am)</option>
                         <option value="afternoon">Afternoon (12 pm)</option>
                         <option value="night">Night (8 pm)</option>
                     </select>
                 </div>
                 <div id="saveAndProceed">
-                    <button id="saveAndProceedButton" onclick="buttonColourChange()">
+                    <button type="submit" id="saveAndProceedButton" onclick="buttonColourChange()">
                         Save and Proceed
                     </button>
                 </div>
