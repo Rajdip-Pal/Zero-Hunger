@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/signuppagestylesheet.css">
+    <script>
+        function donarSelectOption() {
+            var typeofDonarValue = document.getElementById("typeOfDonarSelect").value
+            var additionalDiv = document.getElementById("onSelectRegularDonar")
+            var frequencyOfDonor = document.getElementById("howFrequentlyWantToDonate")
+
+            if (typeofDonarValue === "regular") {
+                additionalDiv.style.display = "flex"
+                frequencyOfDonor.setAttribute('required', '')
+            } else {
+                additionalDiv.style.display = "none"
+                frequencyOfDonor.removeAttribute('required')
+            }
+        }
+
+        function frequencyOfDonation() {
+            var frequency = document.getElementById("howFrequentlyWantToDonate").value
+            var resultOfDays = document.getElementById("specificDays")
+            var resultOfDate = document.getElementById("specificDate")
+            var time = document.getElementById("timeId")
+
+            if (frequency === "daily") {
+                resultOfDays.style.display = "none"
+                resultOfDate.style.display = "none"
+                time.style.display = "block"
+            } else if (frequency === "weekly") {
+                resultOfDays.style.display = "block"
+                resultOfDate.style.display = "none"
+                time.style.display = "block"
+            }
+        }
+
+        function buttonColourChange() {
+            var id = document.getElementById("saveAndProceedButton")
+            id.style.border.width = "3px"
+            id.style.border.borderStyle = "solid"
+            id.style.border.color = "#8ac926"
+            id.style.color = "#8ac926"
+            id.style.backgroundColor = "#001d3d"
+        }
+
+        function checkPassword() {
+            const password = document.querySelector('input[name=password]');
+            const confirm = document.querySelector('input[name=cpassword]');
+            if (confirm.value === password.value) {
+                confirm.setCustomValidity('');
+            } else {
+                confirm.setCustomValidity('Passwords do not match');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <navbar id="navigationBar" class="body">
+        <div id="navigationBarFirst">
+            <a href="/index">
+                <div id="siteName"> zerohunger.com </div>
+            </a>
+            <a href="/index" class="navbarBtn">Home</a>
+            <a href="/contributors" class="navbarBtn">Contributors</a>
+            <a href="/aboutus" class="navbarBtn">About Us</a>
+            <a href="/contactus" class="navbarBtn">Contact Us</a>
+        </div>
+        <div id="navigationBarSecond">
+            <a href="/login">Log In</a>
+        </div>
+    </navbar>
+
+    <section id="home">
+        <section id="createAccountDialougeBox">
+            <div id="headline" class="createAccountDialougeBoxElement">
+                <span id="heading">Create New Account</span>
+            </div>
+            <form action="/signup" method="post">
+                <div class="form">
+                    <div class="formContainer">
+                        <div class="leftContainer">
+                            <label for="name">Full Name</label>
+                            <label for="email">Email Address</label>
+                            <label for="username">Username</label>
+                            <label for="phone">Phone No.</label>
+                            <label for="password">Password</label>
+                            <label for="cpassword">Confirm Password</label>
+                            <label for="address">Address</label>
+                            <label for="city">City</label>
+                            <label for="district">District</label>
+                            <label for="pincode">PIN Code</label>
+                            <label for="state">State</label>
+                            <label for="country">Country</label>
+                        </div>
+                        <div class="rightContainer">
+                            <div><input name="name" type="text" id="name" required></div>
+                            <div><input name="email" type="email" id="email" required></div>
+                            <div><input name="username" type="text" id="username" required></div>
+                            <div><input name="phone" type="tel" id="phone" pattern="[0-9]{10}" placeholder="Mobile No. (without initials)" required></div>
+                            <div><input name="password" id="password" type="password" required></div>
+                            <div><input name="cpassword" id="cpassword" type="password" required onchange="checkPassword()"></div>
+                            <div><input name="address" type="text" id="address" required></div>
+                            <div><input name="city" type="text" id="city" required></div>
+                            <div><input name="district" type="text" id="district" required></div>
+                            <div><input name="pincode" type="text" id="pincode" required></div>
+                            <div><input name="state" type="text" id="state" required></div>
+                            <div><input name="country" id="country" type="text" required></div>
+                        </div>
+                    </div>
+                    <div id="typeOfDonar">
+                        <select class="selectTag" name="typeOfDonar" id="typeOfDonarSelect" onchange="donarSelectOption()" required>
+                            <option value="" disabled selected hidden>What Kind of Donar You are?</option>
+                            <option value="regular">Regular</option>
+                            <option value="occasional">Occasional</option>
+                        </select>
+                    </div>
+                    <div id="onSelectRegularDonar" style="display: none;">
+                        <select class="selectTag" name="donationFrequency" id="howFrequentlyWantToDonate" onchange="frequencyOfDonation()">
+                            <option value="" selected hidden>How Often Do You Want To Donate?</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+                    <div id="specificDays" style="display: none;">
+                        <div><input name="noOfDays" value="sunday" id="sunday" class="specificDays" type="checkbox">
+                        <label for="sunday"> Sunday</label></div>
+
+                        <div><input name="noOfDays" value="monday" id="monday" class="specificDays" type="checkbox">
+                        <label for="monday"> Monday</label></div>
+
+                        <div><input name="noOfDays" value="tuesday" id="tuesday" class="specificDays" type="checkbox">
+                        <label for="tuesday"> Tuesday</label></div>
+
+                        <div><input name="noOfDays" value="wednesday" id="wednesday" class="specificDays" type="checkbox">
+                        <label for="wednesday"> Wednesday </label></div>
+
+                        <div><input name="noOfDays" value="thursday" id="thursday" class="specificDays" type="checkbox">
+                        <label for="thursday"> Thursday</label></div>
+
+                        <div><input name="noOfDays" value="friday" type="checkbox" class="specificDays" id="friday">
+                        <label for="friday"> Friday</label></div>
+
+                        <div><input name="noOfDays" value="saturday" type="checkbox" class="specificDays" id="saturday">
+                        <label for="saturday"> Saturday </label></div>
+                    </div>
+                    <div id="timeId" style="display: none;">
+                        <select class="selectTag" name="time">
+                            <option value="" disabled hidden selected>When You want to Donate?</option>
+                            <option value="morning">Morning (10 am)</option>
+                            <option value="afternoon">Afternoon (12 pm)</option>
+                            <option value="night">Night (8 pm)</option>
+                        </select>
+                    </div>
+                    <div id="saveAndProceed">
+                        <button id="saveAndProceedButton" onclick="buttonColourChange()">
+                            Save and Proceed
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
