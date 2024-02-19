@@ -1,0 +1,227 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px 0px 0px 0px ;
+    overflow-y: hidden;
+    background-image: url(../images/hand-giving-bowl-food-needy-person.jpg);
+    background-size: cover;
+}
+header{
+    height: 6%;
+}
+#headerFirst{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #001d3d;
+}
+#siteName{
+    padding: 5px;
+    padding-left: 50px;
+    height: 40px;
+    width: auto;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+nav{
+    height: 5%;
+    width: 100vw;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+}
+#navigationBarFirst{
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+#navigationBarSecond{
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+#navigationBarFirst a{
+    text-decoration: none;
+}
+#homePage,#mapPage,#profilePage{
+    height: 100%;
+    padding: 0px 10px 0px 10px ;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    color: #001d3d;
+}
+#homePageLink,#mapPageLink,#profilePageLink{
+    height: 75%;
+    border: 3px solid transparent;
+    display: flex;
+    margin-left: 4px;
+    align-items: center;
+}
+#profilePageLink{
+    margin-right: 4px;
+}
+#homePageLink:hover,#mapPageLink:hover,#profilePageLink:hover{
+    border: 3px solid #001d3d;
+    border-radius: 5px;
+}
+.picSizing{
+    align-items: center;
+    padding: 5px 5px 5px 0px;
+}
+main{
+    height: 100vh;
+    display: flex;
+}
+#basicProfileDetailsDiv{
+    height: 80%;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+#basicProfileDetails{
+    height: 100%;
+    width: 80%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 30px;
+    border: 5px solid #8ac926;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#userImageDiv{
+    height: 40%;
+    width: 40%;
+    border: 3px double #8ac926;
+    border-radius: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.basicProfileDetailsBoxes{
+    color: #8ac926;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+#userRealName{
+    margin-top: 10%;
+}
+#userNameBox{
+    color: rgb(130, 130, 223);
+}
+#editProfileLink{
+    margin-top: 10%;
+    width: 30%;
+    text-decoration: none;
+}
+#editProfile{
+    width: 100%;
+    font-size: 25px;
+    padding: 4%;
+    border: 2px solid #8ac926;
+    border-radius: 20px;
+    color: #8ac926;
+    background-color: transparent;
+}
+#otherProfileDetailsDiv{
+    height: 80%;
+    width: 50vw;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#otherProfileDetails{
+    height: 100%;
+    width: 80%;
+}
+#donationDetails{
+    height: 40%;
+    width: 100%;
+    border: 5px solid #8ac926;
+    border-radius: 20px;
+    color: #8ac926;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+}
+#totalDonations{
+    height: 40%;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    border: 3px solid #8ac926;
+    border-radius: 20px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#moreDonationDetails{
+    height: 50%;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.moreDonationDetails{
+    width: 20%;
+    margin-top: 1%;
+    border: 3px solid #8ac926;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.moreDonationDetails span{
+    margin-top: 8%;
+}
+#praisingUser{
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#address{
+    height: 50%;
+    width: 100%;
+    border: 5px solid #8ac926;
+    border-radius: 20px;
+    color: #8ac926;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    margin-top: 20px;
+}
+#addressDetails{
+    width: 80%;
+    border: 5px solid #8ac926;
+    border-radius: 20px;
+    padding: 5%;
+}
+#doantionDetails{
+    width: 80%;
+    border: 5px solid #8ac926;
+    border-radius: 20px;
+    padding: 5%;
+}
